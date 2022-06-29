@@ -73,4 +73,33 @@
 
 ---
 
+## 중앙 정렬
+
+```css
+width : 960px;
+margin : 0 auto;
+```
+---
+
+## 반응형 웹
+
+```html
+<meta name="viewport" content="user-scalable=no,initial-scale=1, maximum-scale=1">
+```
+
+viewport meta 태그에 입력할 수 있는 값
+
+```
+* width             /* width = 240 화면 너비 */
+* height            /* height = 800 화면 높이 */ 
+* initial-scale     /* initial-scale = 2.0 초기 확대 비율 */
+* user-scalable     /* user-scalable = no 확대 및 축소 가능 여부 */
+* minimum-scale     /* minimum-scale = 1.0 최소 축소 비율 */
+* maximum-scale     /* maximum-scale = 2.0 최대 확대 비율 */
+* target-densitydpi /* target-densitydpi = medium-dpi DPI 지정 */
+```
+
+## 미디어 쿼리
+
+@media
 
