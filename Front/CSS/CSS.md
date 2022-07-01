@@ -90,16 +90,26 @@ margin : 0 auto;
 viewport meta 태그에 입력할 수 있는 값
 
 ```
-* width             /* width = 240 화면 너비 */
-* height            /* height = 800 화면 높이 */ 
-* initial-scale     /* initial-scale = 2.0 초기 확대 비율 */
-* user-scalable     /* user-scalable = no 확대 및 축소 가능 여부 */
-* minimum-scale     /* minimum-scale = 1.0 최소 축소 비율 */
-* maximum-scale     /* maximum-scale = 2.0 최대 확대 비율 */
-* target-densitydpi /* target-densitydpi = medium-dpi DPI 지정 */
+width             /* width = 240 화면 너비 */
+height            /* height = 800 화면 높이 */ 
+initial-scale     /* initial-scale = 2.0 초기 확대 비율 */
+user-scalable     /* user-scalable = no 확대 및 축소 가능 여부 */
+minimum-scale     /* minimum-scale = 1.0 최소 축소 비율 */
+maximum-scale     /* maximum-scale = 2.0 최대 확대 비율 */
+target-densitydpi /* target-densitydpi = medium-dpi DPI 지정 */
 ```
 
-## 미디어 쿼리
+## 반응형 웹
 
-@media
+@media screen and (min-width:512px) and (max-width:1023px){
+    div{background-color : blue;}
+}
+
+@media screen and (min-width:1024px) and (max-width:1079px){
+    div{background-color : red;}
+}
+
+@media only screen and (min-width:1080px){
+    div{background-color : yellow;}
+}
 
