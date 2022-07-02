@@ -101,15 +101,20 @@ target-densitydpi /* target-densitydpi = medium-dpi DPI 지정 */
 
 ## 반응형 웹
 
-@media screen and (min-width:512px) and (max-width:1023px){
+```css
+@media screen and (min-width:512px) and (max-width:1023px)
+{
     div{background-color : blue;}
 }
 
-@media screen and (min-width:1024px) and (max-width:1079px){
+@media screen and (min-width:1024px) and (max-width:1079px)
+{
     div{background-color : red;}
 }
 
-@media only screen and (min-width:1080px){
+@media only screen and (min-width:1080px)
+{
     div{background-color : yellow;}
 }
+```
 
