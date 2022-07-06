@@ -1,0 +1,21 @@
+.layer1 {
+    float:none;
+}
+
+.layer2 {
+    float:left;
+}
+
+.layer3 {
+    float:right;
+}
+
+.layer4 {
+    float:inline-start;
+}
+
+.layer5 {
+    float:inline-end;
+}
+
+
