@@ -1,21 +1,20 @@
-.layer1 {
+.img1 {
     float:none;
+    width: 160px;
 }
 
-.layer2 {
+.img2 {
     float:left;
 }
 
-.layer3 {
+.img3 {
     float:right;
 }
 
-.layer4 {
+.img4 {
     float:inline-start;
 }
 
-.layer5 {
+.img5 {
     float:inline-end;
 }
-
-
