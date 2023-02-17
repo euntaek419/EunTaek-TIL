@@ -9,6 +9,6 @@ def solution(num1, den1, num2, den2):
     
     num = (den_1*num1) + (den_2*num2) #분자에 나눈 값을 곱해줌
     
-    ml = gcd(num, den) #값이 약분될 경우를 위한 대비용 최대공약수
+    num_gcd = gcd(num, den) #값이 약분될 경우를 대비한 최대공약수
     
-    return int(num/ml), int(den/ml)
+    return int(num/num_gcd), int(den/num_gcd) #결과값
