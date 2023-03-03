@@ -1,11 +1,16 @@
 <template>
   <div>
-    <input type="text">
+    <input type="text" v-model="newTodoItem">
   </div>
 </template>
 
 <script>
 export default {
+  data: function() {
+    return {
+      newTodoItem: ""
+    }
+  }
 
 }
 </script>
