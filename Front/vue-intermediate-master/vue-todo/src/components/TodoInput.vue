@@ -17,8 +17,12 @@ export default {
   },
   methods: {
     addTodo: function() {
-      localStorage.setItem(this.newTodoItem, this.newTodoItem);
-      this.clearInput();
+      if(this.newTodoItem !== ""){
+        var obj = {completed: false, item: this.newTodoItem};
+      //localStorage.setItem(this.newTodoItem, obj);
+        localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+        this.clearInput();
+      }
     },
     clearInput: function() {
       this.newTodoItem = '';
@@ -44,15 +48,16 @@ input:focus {
   border-style: none;
   font-size: 0.9rem;
 
-  height: 100%;
+  height:100%;
   width: calc(100% - 3rem);
-  text-align: center;
 }
 .addContainer {
   background: linear-gradient(to right, #6478FB, #8763FB);
   display: block;
   width: 3rem;
   border-radius: 0 5px 5px 0;
+
+  height:100%;
 }
 .addBtn {
   color:white;
