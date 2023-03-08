@@ -52,10 +52,10 @@ export default {
   },
   components:{
     //컴포넌트
-    'TodoHeader':TodoHeader,
-    'TodoInput':TodoInput,
-    'TodoList':TodoList,
-    'TodoFooter':TodoFooter
+    TodoHeader,
+    TodoInput,
+    TodoList,
+    TodoFooter
   }
 }
 </script>
