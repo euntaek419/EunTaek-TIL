@@ -1,16 +1,11 @@
 <template>
   <div class="inputBox shadow">
-    <!-- <button v-on:click="addTodo">add</button> -->
     <input type="text" v-model="newTodoItem" v-on:keyup.enter="addTodo">
     <span class="addContainer" v-on:click="addTodo">
       <i class="fa-solid fa-plus addBtn"></i>
     </span>
 
     <Modal v-if="showModal" @close="showModal = false">
-        <!--
-      you can use custom content here to overwrite 
-      default content
-    -->
         <h3 slot="header">
           경고!
           <span @click="showModal = false">
@@ -38,7 +33,7 @@ export default {
   methods: {
     addTodo() {
       if (this.newTodoItem !== '') {
-        this.$emit('addTodoItem',this.newTodoItem);
+        this.$store.commit('addOneItem', this.newTodoItem);
         this.clearInput();
       } else {
         this.showModal = !this.showModal;
