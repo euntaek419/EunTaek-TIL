@@ -13,17 +13,10 @@ export default {
     }
   },
   created() {
-    var vm = this;
     fetchAskList()
-      .then(function(response) {
-        console.log(response);
-        vm.ask = response.data;
-      })
-      .catch(function(error) {
-        console.log(error)
-      });
+      .then(response => this.ask = response.data)
+      .catch(error => console.error(error));
   }
-
 }
 </script>
 
