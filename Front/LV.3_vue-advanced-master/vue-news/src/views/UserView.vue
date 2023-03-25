@@ -10,7 +10,7 @@
 export default {
   computed:{
     userInfo() {
-      return this.$sotre.state.user;
+      return this.$store.state.user;
     }
   },
   created() {

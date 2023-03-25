@@ -2,8 +2,9 @@
 
 <div>
   <p v-for="item in fetchedAsk">
-     <a v-bind:href='item.url'> {{ item.title }} </a> <!--v-bind 축약문법 : -->
-     <small>{{ item.time_ago }}, {{ item.user }} </small>
+     <router-link v-bind:to="`item/${item.id}`"> {{item.title}} </router-link>
+     <small> {{item.time_ago}} </small>
+     <!-- <router-link v-bind:to="`/user/${item.user}`"> {{item.user}} </router-link> -->
   </p>
   </div>
 
