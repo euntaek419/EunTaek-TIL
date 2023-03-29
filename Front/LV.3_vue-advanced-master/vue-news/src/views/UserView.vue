@@ -3,7 +3,7 @@
     <user-profile :info="userInfo">
       <div slot="username"> {{ userInfo.id }}</div>
       <spen slot="time"> {{ 'Joined ' + userInfo.created }}, </spen>
-      <spen slot="karma"> {{ 'Karma ' + userInfo.karma }} </spen>
+      <spen slot="karma"> {{ userInfo.karma + ' Karma' }} </spen>
     </user-profile>
   </div>
 </template>
