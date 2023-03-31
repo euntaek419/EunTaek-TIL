@@ -13,6 +13,7 @@ export default {
         ListItem,
     },
     mixins: [ListMixin],
+    
 
 }
 </script>

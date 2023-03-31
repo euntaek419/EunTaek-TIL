@@ -6,6 +6,8 @@ import JobsView from '../views/JobsView.vue';
 import ItemView from '../views/ItemView.vue';
 import UserView from '../views/UserView.vue';
 // import createdListView from '../views/CreateListView.js';
+import bus from '../utils/bus.js';
+import { store } from '../store/index.js';
 
 Vue.use(VueRouter);
 
@@ -24,6 +26,18 @@ export const router = new VueRouter({
         name: 'news',
         // component: createdListView('NewsView'),
         component: NewsView,
+        beforeEnter: (to, from, next) => {
+          bus.$emit('start:spinner');
+          store.dispatch('FETCH_LIST', to.name)
+            .then(() => {
+              console.log('fetched');
+              next();
+              bus.$emit('end:spinner');
+            })
+          .catch((error) => {
+            console.log(error);
+          });
+        }
     },
     {
         path: '/ask',
