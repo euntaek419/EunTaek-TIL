@@ -31,23 +31,39 @@ export const router = new VueRouter({
           store.dispatch('FETCH_LIST', to.name)
             .then(() => {
               console.log('fetched');
-              next();
               bus.$emit('end:spinner');
+              next();
             })
           .catch((error) => {
             console.log(error);
           });
-        }
+        },
     },
     {
         path: '/ask',
         name: 'ask',
         component: AskView,
+        beforeEnter: (to, from, next) => {
+          bus.$emit('start:spinner');
+          store.dispatch('FETCH_LIST', to.name)
+            .then(() => next())
+            .catch((error) => {
+            console.log(error);
+          });
+        },
     },
     {
         path: '/jobs',
         name: 'jobs',
         component: JobsView,
+        beforeEnter: (to, from, next) => {
+          bus.$emit('start:spinner');
+          store.dispatch('FETCH_LIST', to.name)
+            .then(() => next())
+            .catch((error) => {
+            console.log(error);
+          });
+        },
     },
     {
         path: '/item/:id',
