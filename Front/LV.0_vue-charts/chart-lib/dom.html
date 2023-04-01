@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div ref="app" id="app">hello</div>
+    
+    <script>
+        var divElement = document.getElementById('app'); // id="app" 이 필요
+        var divElement = document.querySelector('#app'); // id="app" 이 필요
+        var divElement = $('#app'); //jquery 접근, id="app" 이 필요
+        var divElement = this.$refs.app; // vue에서, ref="app" 이 필요
+
+    </script>
+</body>
+</html>
