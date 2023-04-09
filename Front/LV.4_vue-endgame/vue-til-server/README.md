@@ -3,6 +3,8 @@
 
 [인프런 Vue.js 끝장내기 강좌](https://www.inflearn.com/course/vue-js-%EB%81%9D%EB%82%B4%EA%B8%B0-%EC%BA%A1%ED%8B%B4%ED%8C%90%EA%B5%90) TIL 애플리케이션의 백엔드 API를 제공하는 Node.js 코드 리포지토리입니다.
 
+![vue.js 끝장내기 강의의 썸네일](https://cdn.inflearn.com/public/courses/324683/course_cover/d744a88a-ad26-4d8b-9653-24920714b24b/lv4.png)
+
 
 
 ## 개발 환경
