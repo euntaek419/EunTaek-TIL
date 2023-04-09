@@ -41,6 +41,5 @@
     "rimraf": "^2.6.3",
     "swagger-jsdoc": "^3.5.0",
     "swagger-ui-express": "^4.1.2"
-  },
-  "dependencies": {}
+  }
 }
