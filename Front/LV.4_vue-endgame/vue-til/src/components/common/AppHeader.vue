@@ -3,10 +3,11 @@
 </template>
 
 <script>
-import Demo from '@/demo/basic/Demo.vue';
-export default {
-	Demo,
-};
+import Demo from '../../demo/basic/Demo'
+import Demo from '@/demo/basic/Demo'
+// import Demo from '@/demo/basic/Demo'
+
+export default {};
 </script>
 
 <style></style>
