@@ -6,7 +6,7 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 export default new VueRouter({
-  mode: 'history', //배포시 주의해야함.
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -19,6 +19,10 @@ export default new VueRouter({
     {
       path: '/signup',
       component: () => import('@/views/SignupPage.vue'),
+    },
+    {
+      path: '/main',
+      components: () => import('@/views/MainPage'),
     },
     {
       path: '*',
