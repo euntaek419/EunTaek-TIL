@@ -11,7 +11,6 @@ import chalk from 'chalk';
 import auth from './api/auth.js';
 import posts from './api/posts.js';
 import docs from './utils/api-doc.js';
-import yes from './';
 
 // utils
 import { authenticateUser } from './utils/auth.js';
