@@ -4,14 +4,17 @@
     <div class="form-wrapper">
       <form class="form" @submit.prevent="submitForm">
         <div>
-          <label for="title">Title : </label>
+          <label for="title">Title:</label>
           <input id="title" type="text" v-model="title" />
         </div>
         <div>
-          <label for="contents">Contents : </label>
-          <textarea id="contents" type="text" rows="7" v-model="contents" />
-          <p v-if="!isContentsValid" class="validation-text warning">
-            내용이 너무 크고 아름다워요.
+          <label for="contents">Contents:</label>
+          <textarea id="contents" type="text" rows="5" v-model="contents" />
+          <p
+            v-if="!isContentsValid"
+            class="validation-text warning isContentTooLong"
+          >
+            Contents length must be less than 250
           </p>
         </div>
         <button type="submit" class="btn">Create</button>
@@ -25,6 +28,7 @@
 
 <script>
 import { createPost } from '@/api/index';
+
 export default {
   data() {
     return {
@@ -35,7 +39,7 @@ export default {
   },
   computed: {
     isContentsValid() {
-      return this.contents.length < 200;
+      return this.contents.length <= 200;
     },
   },
   methods: {

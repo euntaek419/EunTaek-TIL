@@ -5,8 +5,8 @@ import {
   getUserFromCookie,
   saveAuthToCookie,
   saveUserToCookie,
-} from '../utils/cookies';
-import { loginUser } from '@/api/index.js';
+} from '@/utils/cookies';
+import { loginUser } from '@/api/index';
 
 Vue.use(Vuex);
 
@@ -31,7 +31,7 @@ export default new Vuex.Store({
       state.token = token;
     },
   },
-  action: {
+  actions: {
     async LOGIN({ commit }, userData) {
       const { data } = await loginUser(userData);
       console.log(data.token);
