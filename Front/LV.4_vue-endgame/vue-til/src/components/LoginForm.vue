@@ -31,7 +31,6 @@
 <script>
 import { loginUser } from '@/api/index';
 import { validateEmail } from '@/utils/validation';
-
 export default {
   data() {
     return {
@@ -57,14 +56,13 @@ export default {
         };
         const { data } = await loginUser(userData);
         console.log(data.token);
-        this.$sotre.commit('setToken', data.token);
+        this.$store.commit('setToken', data.token);
         this.$store.commit('setUsername', data.user.username);
         this.$router.push('/main');
       } catch (error) {
         // 에러 핸들링할 코드
         console.log(error.response.data);
         this.logMessage = error.response.data;
-        // this.initForm();
       } finally {
         this.initForm();
       }
