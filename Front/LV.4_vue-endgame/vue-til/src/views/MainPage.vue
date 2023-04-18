@@ -7,7 +7,7 @@
         <PostListItem
           v-for="postItem in postItems"
           :key="postItem._id"
-          :item="postItem"
+          :postItem="postItem"
         ></PostListItem>
       </ul>
     </div>
@@ -31,7 +31,7 @@ export default {
     };
   },
   methods: {
-    async fetchNotes() {
+    async fetchData() {
       this.isLoading = true;
       const { data } = await fetchPosts();
       this.isLoading = false;
