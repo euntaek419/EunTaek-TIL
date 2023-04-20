@@ -30,7 +30,7 @@ export default new VueRouter({
     },
     {
       path: '/post/:id',
-      component: () => import('@/view/PostEditPage.vue'),
+      component: () => import('@/views/PostEditPage.vue'),
     },
     {
       path: '*',

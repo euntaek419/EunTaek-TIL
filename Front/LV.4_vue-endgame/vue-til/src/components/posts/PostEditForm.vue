@@ -1,6 +1,6 @@
 <template>
   <div class="contents">
-    <h1 class="page-header">Create Post</h1>
+    <h1 class="page-header">Edit Post</h1>
     <div class="form-wrapper">
       <form class="form" @submit.prevent="submitForm">
         <div>
@@ -62,7 +62,6 @@ export default {
     const { data } = await fetchPost(id);
     this.title = data.title;
     this.contents = data.contents;
-    console.log(data);
   },
 };
 </script>
