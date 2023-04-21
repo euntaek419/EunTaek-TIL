@@ -24,13 +24,14 @@
 
 <script>
 import { deleteCookie } from '@/utils/cookies';
+
 export default {
   computed: {
     isUserLogin() {
       return this.$store.getters.isLogin;
     },
     logoLink() {
-      return this.$store.getters.isLogin ? '/main' : 'login';
+      return this.$store.getters.isLogin ? '/main' : '/login';
     },
   },
   methods: {
