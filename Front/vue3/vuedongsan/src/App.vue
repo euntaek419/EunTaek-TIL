@@ -13,6 +13,13 @@
 
   <Discount/>
 
+  <button @click="priceSort">가격순정렬</button>
+  <button @click="priceReverseSort">가격역순정렬</button>
+  <button @click="languageSort">가나다순정렬</button>
+  <button @click="sortBack">되돌리기</button>
+  
+  
+
   <Card @openModal="modalOpen = true; click_num = $event" :oneroom="onerooms[i]" v-for="(for_oneroom,i) in onerooms" :key="for_oneroom"/>
 
   <!-- <div>
@@ -31,6 +38,7 @@ export default {
   name: 'App',
   data() {
     return {
+      onerooms_original : [...roomdata],
       object : { name : 'kim', age : 20},
       click_num: 0,
       onerooms : roomdata,
@@ -41,6 +49,27 @@ export default {
     }
 
   },
+  methods: {
+    sortBack() {
+      this.onerooms = [...this.onerooms_original];
+    },
+    priceSort() {
+      this.onerooms.sort(function(a,b){
+        return a.price - b.price
+      })
+    },
+    priceReverseSort() {
+      this.onerooms.sort(function(a,b){
+        return b.price - a.price
+      })
+    },
+    languageSort() {
+      this.onerooms.sort(function(a,b){
+        return a.title.localeCompare(b.title);
+      })
+    }
+  },
+
   components: {
     Discount,
     Modal,
