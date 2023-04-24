@@ -1,8 +1,11 @@
 <template>
 
-  <Modal
-  @closeModal="modalOpen = false;" 
-  :onerooms="onerooms" :click_num="click_num" :modalOpen="modalOpen"/>
+  <transition name="fade">
+    <Modal
+    @closeModal="modalOpen = false;" 
+    :onerooms="onerooms" :click_num="click_num" :modalOpen="modalOpen"/>
+  </transition>
+  
 
   <div class="menu">
     <a v-for="menu in menus" :key="menu"> {{ menu }} </a>
@@ -47,6 +50,30 @@ export default {
 </script>
 
 <style>
+.fade-enter-from { /* 시작 스타일 */
+  opacity: 0;
+}
+.fade-enter-active { /* 트랜지션 */
+  transition: all 1s;
+}
+.fade-enter.to { /* 시작 스타일 종료 */
+  opacity: 1;
+}
+
+.fade-leave-from { /* 시작 스타일 */
+  transform: translateY(-1000px);
+}
+.fade-leave-active { /* 트랜지션 */
+  transition: all 1s;
+}
+.fade-leave.to { /* 시작 스타일 종료 */
+  transform: translateY(0px);
+}
+
+
+
+
+
 #app {
   font-family: Avenir, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
