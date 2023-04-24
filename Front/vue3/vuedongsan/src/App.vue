@@ -11,7 +11,7 @@
     <a v-for="menu in menus" :key="menu"> {{ menu }} </a>
   </div>
 
-  <Discount/>
+  <Discount v-if="showDiscount == true" />
 
   <button @click="priceSort">가격순정렬</button>
   <button @click="priceReverseSort">가격역순정렬</button>
@@ -38,6 +38,7 @@ export default {
   name: 'App',
   data() {
     return {
+      showDiscount : true,
       onerooms_original : [...roomdata],
       object : { name : 'kim', age : 20},
       click_num: 0,
@@ -70,6 +71,12 @@ export default {
     }
   },
 
+  mounted() {
+    setTimeout(() => {
+      this.showDiscount = false;
+    }, 2000);
+  },
+
   components: {
     Discount,
     Modal,
@@ -90,13 +97,15 @@ export default {
 }
 
 .fade-leave-from { /* 시작 스타일 */
-  transform: translateY(-1000px);
+  opacity: 1;
+  /* transform: translateX(0px); */
 }
 .fade-leave-active { /* 트랜지션 */
   transition: all 1s;
 }
 .fade-leave.to { /* 시작 스타일 종료 */
-  transform: translateY(0px);
+  opacity: 0;
+  /* transform: translateX(1000px); */
 }
 
 

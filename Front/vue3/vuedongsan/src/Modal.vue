@@ -18,31 +18,40 @@ export default {
     name: 'Modal',
     data() {
         return {
-          month : 1,
+          month : 3,
         }
+    },
+    beforeUpdate() {
+        if(this.month == 2) {
+          alert('2개월은 너무 적소. 4개월쯤 합시다.')
+          this.month = "3"
+      }
     },
     watch : {
       month(a) {
         if(a >= 13){
           alert('13이상 입력하지 마시오.');
-          this.month = "1"
+          this.month = "3"
         }
         else if( isNaN(a) == true ) {
           // else if(/^[0-9]*$|^$/.test(a) == false ) {
           alert('숫자만 입력 가능합니다.')
-          this.month = "1"
+          this.month = "3"
         }
         else if( a === " ") {
           alert('숫자만 입력 가능합니다.')
-          this.month = "1"
+          this.month = "3"
         }
       },
-    },
+  },
+    
+    
     props : {
       onerooms : Array,
       click_num : Number,
       modalOpen : Boolean,
     },
+  
 }
 </script>
 
