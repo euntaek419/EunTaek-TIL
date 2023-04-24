@@ -2,8 +2,11 @@
 
 <div class="black-bg" v-if="modalstats == true">
   <div class="white-bg">
-    <h4>상세페이지임</h4>
-    <p>상세페이지 내용임</p>
+    <img :src="products_rooms[click_num].image">
+    <h4>{{ products_rooms[click_num].title}}</h4>
+    <p>{{ products_rooms[click_num].content}}</p>
+    <p>{{ products_rooms[click_num].price}}원</p>
+
     <button @click="modalstats = false">close</button>
   </div>
 </div>
@@ -16,18 +19,16 @@
     <h4>{{ products[i] }}</h4>
   </div> -->
 
-  <div>
-    <img src="./assets/room0.jpg" class="room-img">
-    <h4 @click="modalstats = true"> {{ products[0] }} </h4>
-    <p>50 만원</p>
-    <button v-on:click="report_num[0]++"> 허위 매물 신고</button> <span>신고수 : {{ report_num[0] }} </span>
-  </div>
+  <!-- <div>
+    <img :src="products_rooms[0].image" class="room-img">
+    <h4> {{ products_rooms[0].title }}</h4>
+    <p> {{ products_rooms[0].price }}원</p>
+  </div> -->
 
-  <div>
-    <img src="./assets/room1.jpg" class="room-img">
-    <h4> {{ products[1] }} </h4>
-    <p>60 만원</p>
-    <button v-on:click="report_num[1]++"> 허위 매물 신고</button> <span>신고수 : {{ report_num[1] }} </span>
+  <div v-for="(products_room, i) in products_rooms" :key="i">
+    <img :src="products_rooms[i].image" class="room-img">
+    <h4 @click="modalstats = true; click_num = i"> {{ products_rooms[i].title }} </h4>
+    <p> {{ products_rooms[i].price }}원 </p>
   </div>
 
   <div>
@@ -40,14 +41,18 @@
 </template>
 
 <script>
+import roomdata from './assets/oneroom';
+
 export default {
   name: 'App',
   data() {
     return {
+      click_num: 0,
       modalstats: false,
       report_num : [0,0,0],
       menus : ['Home', 'Shop', 'About'],
       products : ['역삼동원룸', '천호동원룸', '마포구원룸'],
+      products_rooms : roomdata,
     }
 
   },
