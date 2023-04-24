@@ -4,9 +4,10 @@
     <img :src="onerooms[click_num].image">
     <h4>{{ onerooms[click_num].title}}</h4>
     <p>{{ onerooms[click_num].content}}</p>
-    <p>{{ onerooms[click_num].price}}원</p>
+    <input v-model.number="month"> <!-- <input type="range" min="1" max="12"> -->
+    <p> {{ month }} 개월 선택함 : {{ onerooms[click_num].price * month}}원</p>
     <button @click="$emit('closeModal')">close</button>
-    
+
   </div>
 </div>
 </template>
@@ -15,16 +16,33 @@
 
 export default {
     name: 'Modal',
+    data() {
+        return {
+          month : 1,
+        }
+    },
+    watch : {
+      month(a) {
+        if(a >= 13){
+          alert('13이상 입력하지 마시오.');
+          this.month = "1"
+        }
+        else if( isNaN(a) == true ) {
+          // else if(/^[0-9]*$|^$/.test(a) == false ) {
+          alert('숫자만 입력 가능합니다.')
+          this.month = "1"
+        }
+        else if( a === " ") {
+          alert('숫자만 입력 가능합니다.')
+          this.month = "1"
+        }
+      },
+    },
     props : {
       onerooms : Array,
       click_num : Number,
       modalOpen : Boolean,
     },
-    data() {
-        return {
-        
-        }
-    }
 }
 </script>
 

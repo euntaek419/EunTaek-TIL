@@ -2,8 +2,7 @@
 
   <Modal
   @closeModal="modalOpen = false;" 
-  :onerooms="onerooms" :click_num="click_num" :modalOpen="modalOpen"
-  />
+  :onerooms="onerooms" :click_num="click_num" :modalOpen="modalOpen"/>
 
   <div class="menu">
     <a v-for="menu in menus" :key="menu"> {{ menu }} </a>
