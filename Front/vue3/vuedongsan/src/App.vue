@@ -1,23 +1,13 @@
 <template>
 
-<div class="black-bg" v-if="modalstats == true">
-  <div class="white-bg">
-    <img :src="products_rooms[click_num].image">
-    <h4>{{ products_rooms[click_num].title}}</h4>
-    <p>{{ products_rooms[click_num].content}}</p>
-    <p>{{ products_rooms[click_num].price}}원</p>
-
-    <button @click="modalstats = false">close</button>
-  </div>
-</div>
+  <Modal :products_rooms="products_rooms" :click_num="click_num" :modalstats="modalstats"/>
 
   <div class="menu">
     <a v-for="menu in menus" :key="menu"> {{ menu }} </a>
   </div>
 
-  <!-- <div v-for="(product,i) in products" :key="i">
-    <h4>{{ products[i] }}</h4>
-  </div> -->
+  <Discount/>
+
 
   <!-- <div>
     <img :src="products_rooms[0].image" class="room-img">
@@ -25,11 +15,7 @@
     <p> {{ products_rooms[0].price }}원</p>
   </div> -->
 
-  <div v-for="(products_room, i) in products_rooms" :key="i">
-    <img :src="products_rooms[i].image" class="room-img">
-    <h4 @click="modalstats = true; click_num = i"> {{ products_rooms[i].title }} </h4>
-    <p> {{ products_rooms[i].price }}원 </p>
-  </div>
+  <Card :products_rooms="products_rooms"/>
 
   <div>
     <img src="./assets/room2.jpg" class="room-img">
@@ -42,13 +28,16 @@
 
 <script>
 import roomdata from './assets/oneroom';
+import Discount from './Discount.vue';
+import Modal from './Modal.vue';
+import Card from './Card.vue';
 
 export default {
   name: 'App',
   data() {
     return {
-      click_num: 0,
       modalstats: false,
+      click_num: 0,
       report_num : [0,0,0],
       menus : ['Home', 'Shop', 'About'],
       products : ['역삼동원룸', '천호동원룸', '마포구원룸'],
@@ -56,17 +45,30 @@ export default {
     }
 
   },
+  components: {
+    Discount,
+    Modal,
+    Card,
+  }
 }
 </script>
 
 <style>
 body {
-  box-sizing: border-box;
+  margin:0;
 }
 
 div {
   box-sizing: border-box;
 }
+
+.discount {
+  background:#eee;
+  padding:10px;
+  margin:10px;
+  border-radius: 5px;
+}
+
 .black-bg {
   width: 100%; height: 100%;
   background: rgba(0,0,0,0.5);
