@@ -1,6 +1,9 @@
 <template>
 
-  <Modal :products_rooms="products_rooms" :click_num="click_num" :modalstats="modalstats"/>
+  <Modal
+  @closeModal="modalOpen = false;" 
+  :onerooms="onerooms" :click_num="click_num" :modalOpen="modalOpen"
+  />
 
   <div class="menu">
     <a v-for="menu in menus" :key="menu"> {{ menu }} </a>
@@ -8,26 +11,16 @@
 
   <Discount/>
 
+  <Card @openModal="modalOpen = true; click_num = $event" :oneroom="onerooms[i]" v-for="(for_oneroom,i) in onerooms" :key="for_oneroom"/>
 
   <!-- <div>
-    <img :src="products_rooms[0].image" class="room-img">
-    <h4> {{ products_rooms[0].title }}</h4>
-    <p> {{ products_rooms[0].price }}원</p>
-  </div> -->
-
-  <Card :products_rooms="products_rooms"/>
-
-  <div>
-    <img src="./assets/room2.jpg" class="room-img">
-    <h4> {{ products[2] }} </h4>
-    <p>70 만원</p>
     <button v-on:click="report_num[2]++"> 허위 매물 신고</button> <span>신고수 : {{ report_num[2] }} </span>
-  </div>
+  </div> -->
 
 </template>
 
 <script>
-import roomdata from './assets/oneroom';
+import roomdata from './assets/oneroom.js';
 import Discount from './Discount.vue';
 import Modal from './Modal.vue';
 import Card from './Card.vue';
@@ -36,12 +29,13 @@ export default {
   name: 'App',
   data() {
     return {
-      modalstats: false,
+      object : { name : 'kim', age : 20},
       click_num: 0,
+      onerooms : roomdata,
+      modalOpen: false,
       report_num : [0,0,0],
       menus : ['Home', 'Shop', 'About'],
       products : ['역삼동원룸', '천호동원룸', '마포구원룸'],
-      products_rooms : roomdata,
     }
 
   },
@@ -54,6 +48,15 @@ export default {
 </script>
 
 <style>
+#app {
+  font-family: Avenir, Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
 body {
   margin:0;
 }
