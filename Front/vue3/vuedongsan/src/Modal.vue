@@ -42,6 +42,10 @@ export default {
           alert('숫자만 입력 가능합니다.')
           this.month = "3"
         }
+        else if(/^[0-9]*$|^$/.test(a) == false ) {
+          alert('숫자만 입력 가능합니다.')
+          this.month = "3"
+        }
       },
   },
     
