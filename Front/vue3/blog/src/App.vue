@@ -36,17 +36,31 @@
   </div>
 </nav>
 
+<div class="container mt-4">
+  <h5>Vue 개발자 블로그</h5>
+  <p>-Vue 공부 화이팅-</p>
+</div>
+
+<List :blog_writing="blog_writing"/>
+
 
   <button type="button" class="btn btn-primary">Primary</button>
 </template>
 
 <script>
+import List from "./components/List.vue";
+import blog_data from './assets/blog';
 
 export default {
   name: 'App',
+  data(){
+    return {
+      blog_writing : blog_data,
+    }
+  },
   components: {
-    
-  }
+    List,
+    }
 }
 </script>
 
