@@ -36,19 +36,16 @@
   </div>
 </nav>
 
-<div class="container mt-4">
-  <h5>Vue 개발자 블로그</h5>
-  <p>-Vue 공부 화이팅-</p>
-</div>
+<router-link to="/">홈페이지</router-link>
+<router-link to="/list">리스트 페이지</router-link>
+<router-link to="/detail">디테일 페이지</router-link>
 
-<List :blog_writing="blog_writing"/>
-
+<router-view :blog_writing="blog_writing"></router-view>
 
   <button type="button" class="btn btn-primary">Primary</button>
 </template>
 
 <script>
-import List from "./components/List.vue";
 import blog_data from './assets/blog';
 
 export default {
@@ -59,7 +56,6 @@ export default {
     }
   },
   components: {
-    List,
     }
 }
 </script>

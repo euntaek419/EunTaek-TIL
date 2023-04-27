@@ -13,8 +13,8 @@
 
   <Discount v-if="showDiscount == true" />
 
-  <button @click="priceSort">가격순정렬</button>
-  <button @click="priceReverseSort">가격역순정렬</button>
+  <button @click="priceSort">낮은가격순정렬</button>
+  <button @click="priceReverseSort">높은가격순정렬</button>
   <button @click="languageSort">가나다순정렬</button>
   <button @click="sortBack">되돌리기</button>
   
