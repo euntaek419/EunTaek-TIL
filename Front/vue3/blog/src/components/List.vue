@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <h5>{{ blog_writing[0].title }}</h5>
-    <p>{{ blog_writing[0].content }}</p>
+  <div v-for="(a,i) in 3" :key="i" >
+    <h5 @click="$router.push('/detail/' + i)">{{ blog_writing[i].title }}</h5>
+    <p>{{ blog_writing[i].content }}</p>
   </div>
 
   <div>

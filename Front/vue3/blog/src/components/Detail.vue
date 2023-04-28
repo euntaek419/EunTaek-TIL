@@ -4,6 +4,8 @@
     <h4> {{ $route.params.id }}번 상세페이지</h4>
     <h5>{{ blog_writing[$route.params.id].title }}</h5>
     <h5>{{ blog_writing[$route.params.id].content }}</h5>
+
+    <router-view></router-view>
     
     </div>
 </template>
