@@ -36,9 +36,13 @@
   </div>
 </nav>
 
-<router-link to="/">홈페이지</router-link>
+<router-link to="/">홈페이지</router-link> | 
 <router-link to="/list">리스트 페이지</router-link>
-<router-link to="/detail">디테일 페이지</router-link>
+
+<div class="mt-4">
+  <router-link to="/detail">디테일 페이지</router-link>
+</div>
+
 
 <router-view :blog_writing="blog_writing"></router-view>
 
