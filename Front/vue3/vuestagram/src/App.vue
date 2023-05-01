@@ -9,7 +9,7 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container />
+  <Container :vuestar='vuestar' />
 
   <div class="footer">
     <ul class="footer-button-plus">
@@ -20,13 +20,14 @@
 </template>
 
 <script>
-import Container from './components/Container.vue'
+import Container from './components/Container.vue';
+import Postdata from './assets/postdata';
 
 export default {
   name: 'App',
   data(){
     return {
-      
+      vuestar : Postdata,
     }
   },
   components: {

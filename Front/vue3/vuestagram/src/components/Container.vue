@@ -1,7 +1,7 @@
 <template>
   <div>
     컨테이너 입니다.
-    <Post/>
+    <Post :instar="instar"/>
     <Post/>
     <Post/>
   </div>
@@ -11,6 +11,9 @@
 import Post from './Post.vue'
 
 export default {
+  props: {
+    instar:Object,
+  },
   components: {
     Post,
   }
