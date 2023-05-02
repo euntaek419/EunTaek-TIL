@@ -1,9 +1,8 @@
 <template>
   <div>
-    컨테이너 입니다.
-    <Post :instar="instar"/>
-    <Post/>
-    <Post/>
+    <Post :vuestar="vuestar[i]" v-for="(vuestars,i) in vuestar" :key="i"/>
+    <!-- <Post :vuestar="vuestar[0]"></Post>
+    <Post :vuestar="vuestar[1]"></Post> -->
   </div>
 </template>
 
@@ -12,7 +11,7 @@ import Post from './Post.vue'
 
 export default {
   props: {
-    instar:Object,
+    vuestar: Array,
   },
   components: {
     Post,

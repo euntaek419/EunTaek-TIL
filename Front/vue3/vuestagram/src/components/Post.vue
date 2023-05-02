@@ -2,13 +2,13 @@
   <div class="post">
     <div class="post-header">
       <div class="profile"></div>
-      <span class="profile-name">{{ instar.name }}</span>
+      <span class="profile-name">{{ vuestar.name }}</span>
     </div>
-    <div class="post-body"></div>
+    <div class="post-body" :style=" { backgroundImage : `url(${vuestar.postImage})`}"></div>
     <div class="post-content">
-      <p> {{ instar.likes }}</p>
-      <p><strong>{{ instar.name }}</strong> {{ instar.content }}</p>
-      <p class="date">{{ instar.date }}</p>
+      <p> {{ vuestar.likes }}</p>
+      <p><strong>{{ vuestar.name }}</strong> {{ vuestar.content }}</p>
+      <p class="date">{{ vuestar.date }}</p>
     </div>
 </div> 
 </template>
@@ -16,7 +16,7 @@
 <script>
 export default {
   props: {
-    instar:Object,
+    vuestar: Object,
   },
 }
 </script>
