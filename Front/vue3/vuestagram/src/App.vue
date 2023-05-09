@@ -4,17 +4,17 @@
       <li>Cancel</li>
     </ul>
     <ul class="header-button-right">
-      <li>Next</li>
+      <li @click="step++">Next</li>
     </ul>
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container :vuestar='vuestar' :step='step' />
+  <Container :image='image' :vuestar='vuestar' :step='step' />
   <button @click="more">더보기</button>
 
     <div class="footer">
       <ul class="footer-button-plus">
-        <input type="file" id="file" class="inputfile" />
+        <input @change="upload" accept="image/*" type="file" id="file" class="inputfile" />
         <label for="file" class="input-plus">+</label>
       </ul>
   </div>
@@ -46,6 +46,7 @@ export default {
       step : 0,
       vuestar : Postdata,
       count : 0,
+      image : '',
     }
   },
   components: {
@@ -59,6 +60,14 @@ export default {
         this.vuestar.push(result.data);
         this.count = this.count + 1;
       })
+    },
+    upload(e){
+      let file = e.target.files;
+      console.log(file[0]);
+      let url = URL.createObjectURL(file[0]);
+      console.log(url);
+      this.image = url;
+      this.step++;
     }
   }
 }
