@@ -4,12 +4,13 @@
       <li>Cancel</li>
     </ul>
     <ul class="header-button-right">
-      <li @click="step++">Next</li>
+      <li v-if="step == 1" @click="step++">Next</li>
+      <li v-if="step == 2" @click="publish">발행</li>
     </ul>
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container :image='image' :vuestar='vuestar' :step='step' />
+  <Container @write="writepost" :image='image' :vuestar='vuestar' :step='step' />
   <button @click="more">더보기</button>
 
     <div class="footer">
@@ -47,12 +48,27 @@ export default {
       vuestar : Postdata,
       count : 0,
       image : '',
+      writepost: '',
     }
   },
   components: {
     Container,
   },
   methods : {
+    publish() {
+      var myvuestar = {
+        name: 'Choi eun taek',
+        userImage:'https://placeimg.com/100/100/arch',
+        postImage: this.image,
+        likes: 26,
+        data: 'May 10',
+        liked: false,
+        content: this.writepost,
+        filter: 'perpetua',
+      };
+      this.vuestar.unshift(myvuestar);
+      this.step = 0;
+    },
     more() {
       axios.get(`https://codingapple1.github.io/vue/more${this.count}.json`)
       .then((result)=>{
@@ -63,7 +79,6 @@ export default {
     },
     upload(e){
       let file = e.target.files;
-      console.log(file[0]);
       let url = URL.createObjectURL(file[0]);
       console.log(url);
       this.image = url;
