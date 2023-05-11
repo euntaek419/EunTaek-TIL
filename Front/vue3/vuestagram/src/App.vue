@@ -11,6 +11,7 @@
   </div>
 
   <Container @write="writepost" :image='image' :vuestar='vuestar' :step='step' />
+  <Container :image='image' :vuestar='vuestar' :step='step' />
   <button @click="more">더보기</button>
 
     <div class="footer">
@@ -38,7 +39,7 @@ import Container from './components/Container.vue';
 import Postdata from './assets/postdata';
 import axios from 'axios'
 
-axios.post()
+// axios.post('URL', {name : 'kim'}).then().catch((err))
 
 export default {
   name: 'App',
@@ -71,8 +72,7 @@ export default {
     },
     more() {
       axios.get(`https://codingapple1.github.io/vue/more${this.count}.json`)
-      .then((result)=>{
-        console.log(result.data);
+      .then( result =>{
         this.vuestar.push(result.data);
         this.count = this.count + 1;
       })

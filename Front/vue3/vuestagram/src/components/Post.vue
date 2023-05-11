@@ -10,7 +10,7 @@
       <p><strong>{{ vuestar.name }}</strong> {{ vuestar.content }}</p>
       <p class="date">{{ vuestar.date }}</p>
     </div>
-</div> 
+  </div> 
 </template>
 
 <script>
