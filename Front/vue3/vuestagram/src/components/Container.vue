@@ -12,7 +12,13 @@
     <div v-if="step == 1">
       <div class="upload-image" :style="`background-image:url(${image})`"></div>
       <div class="filters">
-        <FilterBox :image="image" :filter="filter" v-for="filter in filters" :key="filter"></FilterBox>
+        <FilterBox :image="image" :filter="filter" v-for="filter in filters" :key="filter">
+          {{ filter }}
+          <!--
+          <template v-slot:a> slot 1 </template>
+          <template v-slot:default="작명"> {{ 작명.msg }} </template>
+          -->
+        </FilterBox>
       </div>
     </div>
 
