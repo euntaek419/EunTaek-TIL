@@ -10,8 +10,7 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container @write="writepost" :image='image' :vuestar='vuestar' :step='step' />
-  <Container :image='image' :vuestar='vuestar' :step='step' />
+  <Container @write="writepost = $event" :image='image' :vuestar='vuestar' :step='step' />
   <button @click="more">더보기</button>
 
     <div class="footer">
@@ -80,7 +79,6 @@ export default {
     upload(e){
       let file = e.target.files;
       let url = URL.createObjectURL(file[0]);
-      console.log(url);
       this.image = url;
       this.step++;
     }

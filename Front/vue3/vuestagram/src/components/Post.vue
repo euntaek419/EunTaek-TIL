@@ -6,7 +6,7 @@
     </div>
     <div class="post-body" :style=" { backgroundImage : `url(${vuestar.postImage})`}"></div>
     <div class="post-content">
-      <p> {{ vuestar.likes }}</p>
+      <p> {{ vuestar.likes }} Likes</p>
       <p><strong>{{ vuestar.name }}</strong> {{ vuestar.content }}</p>
       <p class="date">{{ vuestar.date }}</p>
     </div>
