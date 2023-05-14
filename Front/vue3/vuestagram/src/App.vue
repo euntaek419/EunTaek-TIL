@@ -10,7 +10,7 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
-  <Container @write="writepost = $event" :image='image' :vuestar='vuestar' :step='step' />
+  <Container @write="writepost = $event" :choicefilter='choicefilter' :image='image' :vuestar='vuestar' :step='step' />
   <button @click="more">더보기</button>
 
     <div class="footer">
@@ -49,11 +49,13 @@ export default {
       count : 0,
       image : '',
       writepost: '',
+      choicefilter : '',
     }
   },
   mounted() {
-    this.emitter.on('작명', (a)=>{
-      console.log(a)
+    this.emitter.on('boxclick', (firedata)=>{
+      this.choicefilter = firedata
+      console.log(this.choicefilter)
     });
   },
   components: {

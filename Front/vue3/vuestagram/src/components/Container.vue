@@ -10,7 +10,7 @@
 
     <!-- 필터선택페이지 -->
     <div v-if="step == 1">
-      <div class="upload-image" :style="`background-image:url(${image})`"></div>
+      <div :class="choicefilter" class="upload-image" :style="`background-image:url(${image})`"></div>
       <div class="filters">
         <FilterBox :image="image" :filter="filter" v-for="filter in filters" :key="filter">
           {{ filter }}
@@ -48,6 +48,7 @@ export default {
     vuestar: Array,
     step: Number,
     image : String,
+    choicefilter : String,
   },
   components: {
     Post,

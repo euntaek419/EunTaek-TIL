@@ -1,7 +1,6 @@
 <template>
-  <div :class="filter + ' filter-item'" :style="`background-image:url(${image})`">
+  <div @click="fire" :class="filter + ' filter-item'" :style="`background-image:url(${image})`">
     <slot></slot>
-    <button @click="fire">버튼</button>
     <!-- <slot name="a"> <spen> 데이터 a</spen></slot> -->
     <!-- <slot :msg="msg"></slot> -->
   </div>
@@ -13,7 +12,7 @@ export default {
     name: 'filterbox',
     methods : {
       fire() {
-        this.emitter.emit('작명', '데이터')
+        this.emitter.emit('boxclick', this.filter)
       }
     },
     data() {
