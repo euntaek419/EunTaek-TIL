@@ -10,6 +10,11 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
+
+  <!-- <h4> Hi {{ $store.state.name }} </h4> -->
+  <!-- <button @click="$store.state.name ='박' "></button> -->
+
+
   <Container @write="writepost = $event" :choicefilter='choicefilter' :image='image' :vuestar='vuestar' :step='step' />
   <button @click="more">더보기</button>
 
@@ -71,7 +76,7 @@ export default {
         data: 'May 10',
         liked: false,
         content: this.writepost,
-        filter: 'perpetua',
+        filter: this.choicefilter,
       };
       this.vuestar.unshift(myvuestar);
       this.step = 0;

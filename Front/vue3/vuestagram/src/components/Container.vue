@@ -24,7 +24,7 @@
 
     <div v-if="step == 2">
       <!-- 글작성페이지 -->
-      <div class="upload-image" :style="`background-image:url(${image})`"></div>
+      <div :class="choicefilter" class="upload-image" :style="`background-image:url(${image})`"></div>
       <div class="write">
         <textarea @input="$emit('write', $event.target.value)" class="write-box">write!</textarea>
       </div>
