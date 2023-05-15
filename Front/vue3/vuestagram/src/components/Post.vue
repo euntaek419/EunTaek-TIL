@@ -4,9 +4,9 @@
       <div class="profile"></div>
       <span class="profile-name">{{ vuestar.name }}</span>
     </div>
-    <div :class="vuestar.filter" class="post-body" :style=" { backgroundImage : `url(${vuestar.postImage})`}"></div>
+    <div @click="$store.commit('likesup')" :class="vuestar.filter" class="post-body" :style=" { backgroundImage : `url(${vuestar.postImage})`}"></div>
     <div class="post-content">
-      <p> {{ vuestar.likes }} Likes</p>
+      <p> {{ $store.state.likes }} Likes</p>
       <p><strong>{{ vuestar.name }}</strong> {{ vuestar.content }}</p>
       <p class="date">{{ vuestar.date }}</p>
     </div>
