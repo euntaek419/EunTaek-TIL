@@ -10,6 +10,10 @@
     <img src="./assets/logo.png" class="logo" />
   </div>
 
+<!-- 
+<p>{{ $store.state.more }}</p>
+<button @click="$store.dispatch('getData')">더보기 버튼</button>
+-->
 
 <!--
   <h4> Hi {{ $store.state.name }} </h4>
@@ -20,6 +24,10 @@
 
   <Container @write="writepost = $event" :choicefilter='choicefilter' :image='image' :vuestar='vuestar' :step='step' />
   <button @click="more">더보기</button>
+
+
+  <p> {{ now() }} {{counter}}</p>
+  <button @click="counter++">버튼</button>
 
     <div class="footer">
       <ul class="footer-button-plus">
@@ -45,6 +53,7 @@
 import Container from './components/Container.vue';
 import Postdata from './assets/postdata';
 import axios from 'axios'
+import {mapMutations, mapState} from 'vuex'
 
 // axios.post('URL', {name : 'kim'}).then().catch((err))
 
@@ -58,6 +67,7 @@ export default {
       image : '',
       writepost: '',
       choicefilter : '',
+      counter: 0,
     }
   },
   mounted() {
@@ -69,7 +79,16 @@ export default {
   components: {
     Container,
   },
+  computed: {
+    name(){
+      return this.$store.state.name
+    },
+    ...mapState('name','age','likes'), //store에 있는 state를 한번에 가져올 수 있음.
+    ...mapState( { 내이름 : 'name',}) //작명하여 새로 사용 가능
+  },
   methods : {
+    ...mapMutations(['setMore','likes']),
+
     publish() {
       var myvuestar = {
         name: 'Choi eun taek',
