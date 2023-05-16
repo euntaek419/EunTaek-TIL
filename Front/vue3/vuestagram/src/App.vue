@@ -61,7 +61,7 @@ export default {
   name: 'App',
   data(){
     return {
-      step : 3,
+      step : 0,
       vuestar : Postdata,
       count : 0,
       image : '',
