@@ -26,8 +26,8 @@
   <button @click="more">더보기</button>
 
 
-  <p> {{ now() }} {{counter}}</p>
-  <button @click="counter++">버튼</button>
+  <!-- <p> {{ now() }} {{counter}}</p> -->
+  <!-- <button @click="counter++">버튼</button> -->
 
     <div class="footer">
       <ul class="footer-button-plus">
@@ -53,7 +53,7 @@
 import Container from './components/Container.vue';
 import Postdata from './assets/postdata';
 import axios from 'axios'
-import {mapMutations, mapState} from 'vuex'
+// import {mapMutations, mapState} from 'vuex'
 
 // axios.post('URL', {name : 'kim'}).then().catch((err))
 
@@ -83,11 +83,11 @@ export default {
     name(){
       return this.$store.state.name
     },
-    ...mapState('name','age','likes'), //store에 있는 state를 한번에 가져올 수 있음.
-    ...mapState( { 내이름 : 'name',}) //작명하여 새로 사용 가능
+    // ...mapState('name','age','likes'), //store에 있는 state를 한번에 가져올 수 있음.
+    // ...mapState( { 내이름 : 'name',}) //작명하여 새로 사용 가능
   },
   methods : {
-    ...mapMutations(['setMore','likes']),
+    // ...mapMutations(['setMore','likes']),
 
     publish() {
       var myvuestar = {
