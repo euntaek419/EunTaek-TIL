@@ -61,7 +61,7 @@ export default {
   name: 'App',
   data(){
     return {
-      step : 0,
+      step : 3,
       vuestar : Postdata,
       count : 0,
       image : '',
@@ -121,7 +121,7 @@ export default {
 </script>
 
 <style>
-@import 'style.css';
+/* @import 'style.css'; */
 
 body {
   margin: 0;
