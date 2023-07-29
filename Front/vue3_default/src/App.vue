@@ -1,19 +1,18 @@
 <template>
   <div>
-    뷰 3 버전임.
-    <!-- <Test001></Test001> -->
+    <Test001></Test001>
   </div>
 
   <div></div>
 </template>
 
 <script>
-// import Test001 from './components/test001'
+import Test001 from './components/test001'
 
 export default {
   name: 'App',
   components: {
-    // Test001,
+    Test001,
   }
 }
 </script>
