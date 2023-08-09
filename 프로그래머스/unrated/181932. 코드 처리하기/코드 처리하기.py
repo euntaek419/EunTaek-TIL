@@ -19,7 +19,3 @@ def solution(code):
         return ''.join(ret)
     else:
         return "EMPTY"
-    
-        
-            
-    return
