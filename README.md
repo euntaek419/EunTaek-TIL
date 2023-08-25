@@ -1,7 +1,9 @@
 # EunTaek-TIL
 
 ##### Front <br/>
-- 학습했던 HTML / CSS / Javascript / 캡틴판교님의 Vue.js2 수강 코드 / 코딩애플님의 Vue.js3 수강 코드가 Commit 되어 있습니다. 
+- HTML / CSS / Javascript
+- 캡틴판교님의 Vue.js2 수강 코드
+- 코딩애플님의 Vue.js3 수강 코드 등이 Commit 되어 있습니다.
 ##### Python <br/>
 - SWEA 연습문제 풀이가 Commit 되어 있습니다.
 
