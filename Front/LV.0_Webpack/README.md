@@ -1,4 +1,4 @@
-# 웹팩 시작하기
+# 웹팩 시작하기 
 
 ### 강의를 듣고, Webpack 에 대한 공부 내용을 정리했습니다.
 [블로그 링크](https://velog.io/@euntaek419/Webpack)
