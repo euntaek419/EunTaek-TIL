@@ -1,5 +1,7 @@
 # 웹팩 시작하기
 
+# 강의를 듣고, Webpack 에 대한 공부 내용을 정리했습니다. [블로그 링크](https://velog.io/@euntaek419/Webpack)
+
 이 리포지토리는 인프런 웹팩 온라인 강의의 수업 리포지토리입니다.
 
 ![인프런 Webpack 강의 썸네일](https://cdn.inflearn.com/public/courses/324959/course_cover/10b37838-44cc-4833-ac1c-18c22bad5a25/1.png)
