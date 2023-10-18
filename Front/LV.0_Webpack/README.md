@@ -7,6 +7,9 @@
 
 ![인프런 Webpack 강의 썸네일](https://cdn.inflearn.com/public/courses/324959/course_cover/10b37838-44cc-4833-ac1c-18c22bad5a25/1.png)
 
+![image](https://github.com/euntaek419/EunTaek-TIL/assets/100109284/5b5c029d-4bd2-4866-a24b-5db3ed5f0256)
+
+
 ## 개발 환경 설정
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)
