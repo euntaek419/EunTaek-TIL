@@ -6,7 +6,7 @@
 
   <div>
   
-  0. Webpack 강의　   [블로그 정리](https://velog.io/@euntaek419/Webpack)
+  0. Webpack 강의 [블로그 정리](https://velog.io/@euntaek419/Webpack)
   1. Vue.js 시작 강의 [블로그 정리](https://velog.io/@euntaek419/Vue.js-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-vs5nlaif)
   2. Vue.js 중급 강의 []
   3. Vue.js 완벽 강의 []
