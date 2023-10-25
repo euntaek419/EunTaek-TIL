@@ -11,7 +11,6 @@ def solution(l, r):
                                     if('8' not in list(str(i))):
                                         if('9' not in list(str(i))):
                                             result.append(i)
-    print(result)
     if(result == [] ):
         return [-1]
     return result
