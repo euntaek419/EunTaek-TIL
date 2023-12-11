@@ -1,6 +1,6 @@
 def solution(n):
     result = []
-    for i in range(n):
+    for i in range(0, n):
         result.append([0] * n)
     
     for j in range(0, n):
