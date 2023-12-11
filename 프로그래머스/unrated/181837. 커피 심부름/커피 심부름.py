@@ -6,5 +6,4 @@ def solution(order): #아메 4500 / 라떼 5000
             result = result + 5000
         else:
             result = result + 4500
-            print("ame",i)
     return result
