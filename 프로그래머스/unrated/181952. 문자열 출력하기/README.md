@@ -1,10 +1,10 @@
-# [unrated] 문자열 출력하기 - 181952 
+# [level unrated] 문자열 출력하기 - 181952 
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181952) 
 
 ### 성능 요약
 
-메모리: 7.34 MB, 시간: 11.38 ms
+메모리: 7.32 MB, 시간: 20.95 ms
 
 ### 구분
 
@@ -12,7 +12,11 @@
 
 ### 채점결과
 
-Empty
+정확성: 100.0<br/>합계: 100.0 / 100.0
+
+### 제출 일자
+
+2024년 1월 2일 21:35:51
 
 ### 문제 설명
 
@@ -38,4 +42,4 @@ Empty
 <div class="highlight"><pre class="codehilite"><code>HelloWorld!
 </code></pre></div>
 
-> 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+> 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
