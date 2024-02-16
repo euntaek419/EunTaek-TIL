@@ -10,7 +10,7 @@
   1. Vue.js 시작 강의 [블로그 정리](https://velog.io/@euntaek419/Vue.js-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-vs5nlaif)
   2. Vue.js 중급 강의 [블로그 정리](https://velog.io/@euntaek419/Vue.js-%EC%A4%91%EA%B8%89-%EB%B3%B5%EC%8A%B5%ED%95%98%EA%B8%B0)
   3. Vue.js 완벽 강의 [블로그 정리](https://velog.io/@euntaek419/Vue.js-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C-%EB%B3%B5%EC%8A%B5)
-  4. Vue.js 끝장 강의 []
+  4. Vue.js 끝장 강의 [블로그 정리](https://velog.io/@euntaek419/Vue.js-%EB%81%9D%EC%9E%A5%EB%82%B4%EA%B8%B0-%EB%B3%B5%EC%8A%B5)
 
   </div>
 
