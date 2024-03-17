@@ -8,12 +8,19 @@
 </template>
 
 <script>
+import { watch } from 'vue'
+
 export default {
     props: ['todoItems'],
     setup(props, {emit}) {
         function removeTodo(item, index) {
             emit('remove', item, index)
         }
+
+        watch(props.todoItems, (newValue) => {
+            console.log( {newValue} )
+        }) 
+
         return { removeTodo }
     }
 }

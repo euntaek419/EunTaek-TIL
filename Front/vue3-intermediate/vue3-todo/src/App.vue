@@ -8,7 +8,7 @@
 import TodoHeader from '@/components/TodoHeader.vue';
 import TodoInput from '@/components/TodoInput.vue';
 import TodoList from '@/components/TodoList.vue';
-import { ref } from 'vue'
+import { ref, onBeforeMount } from 'vue'
 
 export default {
   components: {
@@ -28,7 +28,9 @@ export default {
       return result;
     }
 
-    todoItems.value = fetchTodos();
+    onBeforeMount(() => {
+      todoItems.value = fetchTodos();
+    })
     
     function addTodoItem(todo) {
       todoItems.value.push(todo)
