@@ -8,8 +8,8 @@
 # input = sys.stdin.readline.rstrip() #문자열 입력
 
 # TestCase 입력
-# T = int(input()):
-# for i in range(T)
+# T = int(input())
+# for i in range(T):
 #     A, B = map(int, input().split())
 #     result = A + B;
 #     print("Case")
