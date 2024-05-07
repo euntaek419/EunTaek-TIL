@@ -1,23 +1,34 @@
 def solution(N, stages):
+    
     result = []
-    user = len(stages) # 유저 수
+    user = len(stages) #유저 수
     
     answer = [] # 최종 결과
     
-    for i in range(1, N+1):
-        count = stages.count(i)  # i 스테이지에 머물러 있는 사람 수
-        if user == 0:  # 분모가 0이 되는 것을 방지
-            fail = 0
+    # 1. 각 스테이지의 실패율을 계산하여 배열에 집어넣자
+    
+    # - n번 스테이지의 실패율 구하기
+    
+    for i in range(1, N+1): #1스테이지부터 끝까지
+        count = 0
+        for j in range(0, len(stages)):
+            if(stages[j] > i):
+                count += 1
+        result.append( (user-count) / user )
+        user = user - (user-count)
+        
+    temp = result # 정렬되지 않은 결과
+    
+    result = sorted(result, reverse=True) # 정렬된 결과
+    
+    #실패율이 높은 순서부터 인덱스 확인해서 return
+    for i in range(0, N):
+        if(i > 0 and result[i-1] == result[i]):
+            answer.append(answer[i-1] + 1)
         else:
-            fail = count / user  # 실패율 계산
-        result.append((i, fail))  # (스테이지 번호, 실패율) 형태로 저장
-        user -= count  # 다음 계산을 위해 user 수 업데이트
-    
-    # 실패율을 기준으로 내림차순 정렬, 실패율이 같다면 스테이지 번호가 작은 순으로 정렬
-    result.sort(key=lambda x: (-x[1], x[0]))
-    
-    # 최종 결과 추출 (스테이지 번호)
-    for i in result:
-        answer.append(i[0])
+            answer.append(temp.index(result[i]) + 1)
     
     return answer
+                
+    
+        
