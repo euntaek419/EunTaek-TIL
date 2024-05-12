@@ -1,6 +1,6 @@
 # [level 1] 체육복 - 42862 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42862#) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42862#qna) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 05월 12일 17:59:09
+2024년 05월 12일 17:59:29
 
 ### 문제 설명
 
