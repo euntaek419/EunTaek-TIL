@@ -7,6 +7,8 @@ def solution(X, Y):
     # 공통 숫자와 그 빈도를 찾는다
     XY = X & Y
     
+    print(XY)
+    
     # 공통 숫자들을 기반으로 결과 문자열을 만든다
     result = []
     for n1, n2  in XY.items():
