@@ -1,3 +1,3 @@
 n = int(input())
 
-print(n + n + n + n)
+print(n*4)
