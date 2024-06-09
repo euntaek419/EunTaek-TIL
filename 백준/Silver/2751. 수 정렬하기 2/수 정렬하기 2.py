@@ -6,7 +6,10 @@ T = int(input())
 array = []
 
 for i in range(0, T):
-    array.append(int(input()))
+    n = int(input())
+    array.append(n)    
 
-for i in sorted(array):
+array = sorted(array)
+
+for i in array:
     print(i)
