@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+T = int(input())
+
+n = 0
+for i in range(0, T):
+	temp = list(input().split())
+	
+	if(temp[1] == '+'):
+		n = n + (int(temp[0]) + int(temp[2]))
+	elif(temp[1] == '-'):
+		n = n + (int(temp[0]) - int(temp[2]))
+	elif(temp[1] == '*'):
+		n = n + (int(temp[0]) * int(temp[2]))
+	elif(temp[1] == '/'):
+		n = n + (int(temp[0]) // int(temp[2]))
+print(n)
+
