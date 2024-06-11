@@ -1,0 +1,35 @@
+import sys
+input = sys.stdin.readline
+
+n, m = map(int, input().split())  # 집 개수, 장마 기간
+k = list(map(int, input().split()))  # 마을 땅 높이
+
+b = set()  # 비가 내린 위치들
+array = [0] * n
+array2 = [0] * n
+
+for i in range(m):  # 장마 기간들
+    s, e = map(int, input().split())  # s번 집부터 e번 집까지 비가 옴.
+    
+    array[s-1] += 1
+    if e < n:
+        array[e] -= 1
+    
+    for j in range(s-1, e):
+        b.add(j)
+    
+    if (i + 1) % 3 == 0:  # 배수 시스템
+        for j in b:
+            k[j] -= 1
+        b.clear()
+
+array2[0] = array[0]
+for j in range(1, n):
+    array2[j] = array2[j-1] + array[j]
+
+# 최종 결과 계산
+for j in range(n):
+    k[j] += array2[j]
+
+# 결과 출력
+print(' '.join(map(str, k)))
