@@ -1,27 +1,52 @@
-import sys
-input = sys.stdin.readline
+from sys import stdin
 
-n, m = map(int, input().split()) # 집 개수, 장마 기간
-k = list(map(int, input().split())) # 마을의 땅 높이들
+readline = stdin.readline
 
-array = [0] * (n + 1) # 누적합을 위한 배열 초기화
-b = set() # 비 내릴 위치들
-
-for i in range(m): # 장마 기간들
-	s, e = map(int, input().split()) # 장마의 시작, 종료 위치	
-
-	array[s-1] += 1 # 비 시작 지점
-	array[e] -= 1 # 비 종료 지점
-	b.update(range(s-1, e)) #비의 범위 추가
+def getDrainRanges(drains):
+	drains = sorted(drains)
 	
-	if (i + 1) % 3 == 0: #배수 시스템 작동 
-		for j in b:
-			k[j] -= 1
-		b.clear()
+	if not drains:
+		return []
+	
+	ranges = []
+	s1, e1 = drains[0]
+	
+	for s2, e2 in drains:
+		if e1 >= s2 - 1:
+				e1 = max(e1, e2)
+		else:
+			ranges.append((s1, e1))
+			s1, e1 = s2, e2
+	
+	ranges.append((s1, e1))
+	
+	return ranges
 
-count = 0 # 누적합 저장 변수
-for j in range(n):
-	count += array[j] # 현재 위치의 누적합 계산
-	k[j] += count # 땅 높이 상승
 
-print(' '.join(map(str, k)))
+if __name__ == '__main__':
+	N, M = map(int, readline().split())
+	homes = map(int, readline().split())
+	
+	rains = [0 for _ in range(N + 1)]
+	drains = set()
+	
+	for day in range(1, M + 1):
+		s, e = map(int, readline().split())
+		
+		rains[s - 1] += 1
+		rains[e] -= 1
+
+		drains.add((s, e))
+		
+		if day % 3 == 0:
+			for s, e in getDrainRanges(drains):
+				rains[s - 1] -= 1
+				rains[e] += 1
+			drains = set()
+	
+	for i in range(N):
+		rains[i + 1] += rains[i]
+	
+	homes = map(sum, zip(homes, rains[:-1]))
+
+	print(' '.join(map(str, homes)))
